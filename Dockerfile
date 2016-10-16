@@ -1,6 +1,9 @@
 FROM zwh8800/xware
 
+WORKDIR /xware
+
 ADD site.conf ./site.conf
+ADD entry.sh ./entry.sh
 
 RUN apt-get update && \
     apt-get install -y nginx && \
@@ -9,6 +12,4 @@ RUN apt-get update && \
 
 EXPOSE 80
 
-WORKDIR /xware
-
-ENTRYPOINT ["./monitor.sh"]
+ENTRYPOINT ["./entry.sh"]
