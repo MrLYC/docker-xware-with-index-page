@@ -12,4 +12,6 @@ RUN apt-get update && \
 
 EXPOSE 80
 
+ENV FILE_EXPIRES 43200
+
 ENTRYPOINT ["./entry.sh"]
